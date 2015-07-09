@@ -9,55 +9,46 @@
   <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
-  <!-- ionic/angularjs js -->
-  <script src="lib/ionic/js/ionic.bundle.js"></script>
-  <!-- cordova script (this will be a 404 during development) -->
-  <script src="cordova.js"></script>
-  <!-- your app's js -->
-  <script src="js/app.js"></script>
-</head>
-<body ng-app="starter">
-  <ion-pane>
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">Countdown</h1>
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    </ion-header-bar>
-    <ion-content>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
 
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/mainCtrl.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller='MainCtrl'>
 
-          <div class="list">
-            <div class="item range range-positive">
-              <i class="icon ion-android-remove-circle"></i>
-              <input type="range" name="volume" min="0" max="100" value="12">
-              <i class="icon ion-android-add-circle"></i>
-            </div>
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Timer</h1>
+      </ion-header-bar>
+      <ion-content>
+        <div class='row'>
+          {{hours}}:
+          {{minutes}}:
+          {{seconds}}
+        </div>
+        <div class='list'>
+          <div class='item range'>
+            <i class="icon ion-android-remove-circle"></i>
+            <input type='range' name='hours' min='0' max='23' value='0' ng-model='hours'></input>
+            <i class="icon ion-android-add-circle"></i>
           </div>
-
-
-
-
-
-           <div class="list">
-            <div class="item range range-positive">
-              <i class="icon ion-android-remove-circle"></i>
-              <input type="range" name="volume" min="0" max="100" value="12">
-              <i class="icon ion-android-add-circle"></i>
-            </div>
+          <div class='item range'>
+            <i class="icon ion-android-remove-circle"></i>
+            <input type='range' name="minutes" min='0' max='59' value='0' ng-model='minutes'></input>
+            <i class="icon ion-android-add-circle"></i>
           </div>
-
-
-
-      <div class="list">
-            <div class="item range range-positive">
-              <i class="icon ion-android-remove-circle"></i>
-              <input type="range" name="volume" min="0" max="100" value="12">
-              <i class="icon ion-android-add-circle"></i>
-            </div>
+          <div class='item range'>
+            <i class="icon ion-android-remove-circle"></i>
+            <input type='range' name="seconds" min='0' max='59' value='0' ng-model='seconds'></input>
+            <i class="icon ion-android-add-circle"></i>
           </div>
-
-
-    </ion-content>
-  </ion-pane>
-</body>
->>>>>>> aff2de01f653627113f5b989f00e3927b6b75b46
+        </div>
+      </ion-content>
+    </ion-pane>
+  </body>
 </html>
