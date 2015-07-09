@@ -20,13 +20,13 @@
     <script src="js/app.js"></script>
     <script src="js/mainCtrl.js"></script>
   </head>
-  <body ng-app="starter" ng-controller="MainCtrl">
+  <body ng-app="starter" >
 
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Timer</h1>
       </ion-header-bar>
-      <ion-content>
+      <ion-content ng-controller="MainCtrl">
         <div class="row">
           {{hours}}:
           {{minutes}}:
@@ -45,7 +45,7 @@
           </div>
           <div class="item range">
             <i class="icon ion-android-remove-circle"></i>
-            <input type="range" name="seconds" min="0" max="59" value="0" ng-model-options="{updateOn: '$interval', debounce: 1000 }" ng-model="seconds">
+            <input type="range" name="seconds" min="0" max="59" value="0" ng-model="seconds">
             <i class="icon ion-android-add-circle"></i>
           </div>
           <div class="button-bar">
