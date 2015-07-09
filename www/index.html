@@ -37,7 +37,6 @@
             <i class="icon ion-android-remove-circle"></i>
             <input type="range" name="hours" min="0" max="23" value="0" ng-model="hours">
             <i class="icon ion-android-add-circle"></i>
-
           </div>
           <div class="item range">
             <i class="icon ion-android-remove-circle"></i>
@@ -46,10 +45,13 @@
           </div>
           <div class="item range">
             <i class="icon ion-android-remove-circle"></i>
-            <input type="range" name="seconds" min="0" max="59" value="0" ng-model="seconds">
+            <input type="range" name="seconds" min="0" max="59" value="0" ng-model-options="{updateOn: '$interval', debounce: 1000 }" ng-model="seconds">
             <i class="icon ion-android-add-circle"></i>
           </div>
-
+          <div class="button-bar">
+            <button class="button button-large button-balanced" ng-click="startTimer()">Start</button>
+            <button class="button button-large button-assertive">Reset</button>
+          </div>
         </div>
       </ion-content>
     </ion-pane>
