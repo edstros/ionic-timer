@@ -7,6 +7,7 @@ angular
 
     var promise;
 
+  //increment value on icon click
   $scope.plus = function(unit){
     switch(unit){
       case 'hours':
@@ -27,6 +28,7 @@ angular
     }
   }
 
+  //decrement value on icon click
   $scope.minus = function(unit){
     switch(unit){
       case 'hours':
@@ -48,8 +50,6 @@ angular
   }
 
   $scope.startTimer = function(){
-  // var sec = $scope.seconds;
-
     promise = $interval(function(){
 
       //reset minutes and seconds and decrement hours
@@ -79,23 +79,23 @@ angular
       }
 
     }, 1000);
-
   }
 
+  //reset timer
   $scope.reset = function(){
     $scope.hours = 0;
     $scope.minutes = 0;
     $scope.seconds = 0;
-
+    //end timer
     $interval.cancel(promise);
   }
 
-
+  //vibrate on timer end
   $scope.vibrateNotify = function () {
-      testBtn.addEventListener("click", function () {
-        navigator.notification.vibrate(20000);
-        //cordova plugin
-      });
-    }
+    testBtn.addEventListener("click", function () {
+      navigator.notification.vibrate(20000);
+      //cordova plugin
+    });
+  }
 
 }])
