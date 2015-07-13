@@ -35,23 +35,23 @@
         </div>
         <div class="list">
           <div class="item range">
-            <i class="icon ion-android-remove-circle"></i>
+            <a class="button button-icon icon ion-android-remove-circle" ng-click="minus('hours')"></a>
             <input type="range" name="hours" min="0" max="23" value="0" ng-model="hours">
-            <i class="icon ion-android-add-circle"></i>
+            <a class="button button-icon icon ion-android-add-circle" ng-click="plus('hours')"></a>
           </div>
           <div class="item range">
-            <i class="icon ion-android-remove-circle"></i>
+            <a class="button button-icon icon ion-android-remove-circle" ng-click="minus('minutes')"></a>
             <input type="range" name="minutes" min="0" max="59" value="0" ng-model="minutes">
-            <i class="icon ion-android-add-circle"></i>
+            <a class="button button-icon icon ion-android-add-circle" ng-click="plus('minutes')"></a>
           </div>
           <div class="item range">
-            <i class="icon ion-android-remove-circle"></i>
+            <a class="button button-icon icon ion-android-remove-circle" ng-click="minus('seconds')"></a>
             <input type="range" name="seconds" min="0" max="59" value="0" ng-model="seconds">
-            <i class="icon ion-android-add-circle"></i>
+            <a class="button button-icon icon ion-android-add-circle" ng-click="plus('seconds')"></a>
           </div>
           <div class="button-bar">
             <button class="button button-large button-balanced" ng-click="startTimer()">Start</button>
-            <button class="button button-large button-assertive">Reset</button>
+            <button class="button button-large button-assertive" ng-click="reset()">Reset</button>
           </div>
         </div>
     </ion-content>
