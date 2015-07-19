@@ -26,7 +26,7 @@ angular
       }
       break;
     }
-  }
+  };
 
   //decrement value on icon click
   $scope.minus = function(unit){
@@ -47,7 +47,7 @@ angular
       }
       break;
     }
-  }
+  };
 
   $scope.startTimer = function(){
     promise = $interval(function(){
@@ -76,10 +76,18 @@ angular
         $scope.seconds = 0;
         $interval.cancel(promise);
         console.log('its over');
+        $scope.vibrateNotify();
+        alert("Time\'s Up!");
       }
 
     }, 1000);
-  }
+   //vibrate on timer end
+  $scope.vibrateNotify = function () {
+      navigator.notification.vibrate(20000);
+      //cordova plugin
+
+  };
+  };
 
   //reset timer
   $scope.reset = function(){
@@ -88,14 +96,8 @@ angular
     $scope.seconds = 0;
     //end timer
     $interval.cancel(promise);
-  }
+  };
 
-  //vibrate on timer end
-  $scope.vibrateNotify = function () {
-    testBtn.addEventListener("click", function () {
-      navigator.notification.vibrate(20000);
-      //cordova plugin
-    });
-  }
 
-}])
+
+}]);
